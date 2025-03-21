@@ -1,0 +1,125 @@
+.CLT-WHOLE-CONTAINER{
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+.CLT-TOP-CONTAINER{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  border: 1px solid green;
+}
+
+.CLT-CONTENT p{
+  font-size: small;
+  border: 1px solid red;
+}
+
+.clt-p1,.clt-p2,.clt-p3,.clt-p4{
+  font-size: 15px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.clt-p1,.clt-p2{
+  color: gray;
+  cursor: pointer;
+}
+.clt-p3,.clt-p4{
+  color:rgb(211, 208, 208);
+  cursor: default;
+}
+
+.clt-cl-inp1{
+  padding:10px 20px 10px 10px;
+  width: 200px;
+  border-radius: 5px;
+  border: none;
+  border: 1px solid rgb(214, 209, 209);
+}
+
+.clt-cl-inp1:hover{
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.clt-cl-inp2{
+  padding:10px 20px 10px 10px;
+  width: 200px;
+  border-radius: 5px;
+  border: none;
+  border: 1px solid rgb(214, 209, 209);
+}
+.clt-cl-inp2:hover{
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.clt-dropdown-input{
+  position: relative;
+  width: 200px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 20px 10px 10px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.clt-dropdown-icon{
+  position: absolute;
+  /* right: 694px; */
+  cursor: pointer;
+  color: #666;
+  margin-left: -25px;
+  margin-top: 12px;
+}
+
+.clt-dropdown-container{
+  position: absolute;
+  width:14.5%;
+  max-height: 250px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1000;
+  margin-left: 21px;
+  /* margin: 15px; */
+  margin-top: 40px;
+
+}
+
+.clt-dropdown-item{
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.clt-dropdown-item:hover{
+  background-color: #f0f0f0;
+}
+
+.clt-left-content{
+  border: none;
+  border:1px solid #f0f0f0;
+  width:500%;
+  height: 100%;
+  background-color: white;
+}
+
+.CLT-DOWN-CONTAINER{
+  border: 1px solid blue;
+  height: 80%;
+}
+
+.clt-left-content{
+  border:1px solid green;
+  height: 60%;
+  margin-top: 20px;
+  margin-left: 7px;
+  width: 50%;
+  border-radius: 4px;
+}

@@ -1,0 +1,394 @@
+.mpet-container {
+  width: 95%;
+  height: 90%;
+}
+
+.mpet-title-div {
+  display: flex;
+  margin-top: 5px;
+}
+
+.mpet-titles {
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.content-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+}
+
+.content-1{
+  margin-left: 5px;
+  max-height: 101%;
+  overflow: auto;
+}
+
+/* .content-2{
+  height: 67%;
+  display: flex;
+  flex-direction: column;
+} */
+
+.content-2{
+  width: 50%;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+
+.content-1 {
+  width: 50%;
+  background-color: white;
+  border: 1px solid rgb(219, 213, 213);
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.mpet-drop-icon{
+  margin-right: 10px;
+  margin-top: 10px;
+  position: absolute;
+  right: 8px;
+  cursor: pointer;
+  color: #666;
+}
+
+.mpet-dropdown1,.mpet-dropdown2,.mpet-dropdown3,.mpet-dropdown4,.mpet-dropdown5,.mpet-dropdown6{
+  position: absolute;
+  width:15.8%;
+  max-height: 250px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1000;
+  margin: 15px;
+  margin-top: 50px;
+}
+
+.mpet-com-input{
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 50%;
+}
+.mpet-com-input2{
+  margin-left: 60px;
+}
+
+.mpp {
+  margin-left: 18px;
+  margin-top: 3px;
+  font-weight: bold;
+}
+
+.eeprom {
+  background-color: red;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  padding: 5px 10px;
+}
+
+.whole-div {
+  margin-left: 17px;
+  margin-top: 18px;
+}
+
+.input-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.mpin {
+  /* flex: 1; */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 50%;
+}
+
+.mpp1, .mpp2, .mpp3, .mpp4 {
+  margin-top: 10px;
+}
+
+.mppafter {
+  width: 13%;
+  height: 2px;
+  background-color: red;
+  margin-left: 18px;
+}
+
+.grayline-mpet {
+  background: #c4c4c4;
+  height: 3px;
+  margin: 20px 0;
+  border-radius: 90%;
+}
+
+.mpetselect-redline {
+  width: 10%;
+  height: 2px;
+  background-color: red;
+}
+
+.mpet-textcontent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.mpet-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.rmpetbtn {
+  border: none;
+  background-color: red;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 3px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider1 {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #666;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.slider1:before {
+  content: "";
+  position: absolute;
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.ipds{
+  display: flex;
+  flex-direction: row;
+}
+
+.ipd2{
+  margin-top: 10px;
+  margin-left: 300px;
+}
+
+.com{
+  font-size: 15px;
+}
+
+.paramres{
+  margin-top:10px ;
+  margin-left: 180px;
+}
+
+.selectopt1{
+  width: 280px;
+  border: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+}
+.selectopt1 option{
+  cursor: pointer;
+}
+.selectopt1:hover{
+  border: 1px solid black;
+}
+
+.selectopt2{
+  width: 280px;
+  border: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.selectopt2 option{
+  max-height: 30px;
+}
+
+
+
+.resultsec-div{
+  height: 67%;
+  border: none;
+  background-color: white;
+  border: 1px solid rgb(219, 213, 213);
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.mpet-logs-div{
+  margin-top: 12px;
+  height: 30.5%;
+  border: none;
+  border: 1px solid gray;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.mpet-logs-p1{
+  margin-left: 10px;
+  margin-top: 12px;
+  font-weight: bolder;
+}
+
+.mpet-logs-p2{
+  margin-top: 15px;
+  margin-left: 15px;
+  color: gray;
+}
+
+.result-sec-redline{
+  width: 13%;
+  height: 2px;
+  background-color: red;
+  margin-left: 0px;
+}
+
+.result-sec-content2{
+  display: flex;
+  flex-direction: row;
+}
+.mpet-res-grayline{
+  background: #c4c4c4;
+  border-left: 1.5px solid #c4c4c4;
+  border-radius: 100%;
+  margin-left:35px;
+  width: 4px;
+}
+
+.mpet-res-content1{
+  margin-top: 15px;
+  margin-left: 70px;
+}
+
+.mpet-res-content2{
+  margin-top: 15px;
+  margin-left: 30px;
+}
+
+.mpet-mpetresults{
+  font-size: small;
+  margin-left: 30px;
+}
+
+.mpet-configuredvalues{
+  font-size: small;
+  margin-left: 60px;
+}
+.mpet-result-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.mpet-motor-inductance,.kp-coefficient,.mpet-motor-resistance,.mpet-motor-bemf,.ki-coefficient{
+  border: none;
+  border: 1px solid #ccc;
+  background-color: #eeeaea;
+  margin-top: 15px;
+  margin-left: -75px;
+  padding-right: 115px;
+  border-radius: 3px;
+}
+
+.pppp{
+  margin-left: 3px;
+}
+
+.mpet-result-container p,.mpet-configuredvalues-container p{
+  font-size: small;
+}
+
+.mpetmrdiv{
+  display: flex;
+  margin-top: 5px;
+}
+.mpetcvmr{
+  display: flex;
+  margin-top: 5px;
+}
+
+.content-2 input{
+  width: 95px;
+  margin-left: 10px;
+}
+
+.motor-phase-resistance,.motor-phase-inductance,.motor-bemf-constant,.cv-kp-coeff,.cv-ki-coeff{
+  border: none;
+  border: 1px solid #ccc;
+  background-color: #eeeaea;
+  margin-top: 15px;
+  padding-right: 95px;
+  border-radius: 3px;
+}
+
+.ki{
+  width: 150%;
+}
+
+.mpet-result-btn{
+  margin-top: 30px;
+  margin-left: 160px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border: none;
+  border: 1px solid rgb(160, 18, 18);
+  background-color: white;
+  cursor: pointer;
+  transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; 
+}
+
+.mpet-result-btn:hover{
+  background-color: rgb(206, 19, 19);
+  color: white;
+}
