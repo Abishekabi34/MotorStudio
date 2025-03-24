@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Dispatch, ReactElement, SetStateAction, useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { IoRadioButtonOnOutline } from "react-icons/io5";
@@ -14,6 +14,10 @@ import { IoChevronDown } from "react-icons/io5";
 import { PiSpinnerBallFill } from "react-icons/pi";
 import { TbSettingsCog } from "react-icons/tb";
 import { GoProjectRoadmap } from "react-icons/go";
+import Quickspin from '../../features/QS/Quickspin';
+import Optimization from '../../features/OPTIMIZATION/Optimization';
+import AdvancedTuning from '../../features/AdvancedTuning';
+import Registermap from '../../features/Registermap';
 import img1 from '../../componentimg1/img1.jpg';
 import img2 from '../../componentimg1/img2.jpg';
 import img3 from '../../componentimg1/img3.jpg';
@@ -31,8 +35,12 @@ import imag7 from '../../componentimg2/imag7.jpg';
 import './Home.css';
 import { useDevice } from '../../DeviceContext';
 
+type HomePropType={
+  setActiveComponent?:Dispatch<SetStateAction<ReactElement>>
+}
 
-const Home = () => {
+const Home = ({setActiveComponent}:HomePropType) => {
+
 
   const {isValidDevice,setIsValidDevice}=useDevice();
   const [search, setSearch] = useState('');
@@ -252,28 +260,28 @@ const Home = () => {
         </div>
         :
         <div className='proceed-buttons'>
-          <div className='qsd' >
+          <div className='qsd' onClick={()=>setActiveComponent(<Quickspin setActiveComponent={setActiveComponent}/>)}>
             <div className='qsi'><PiSpinnerBallFill/></div>
             <div className='pd'>
               <p className='cp1'>Quick Spin</p>
               <p className='cp2'>Get your motor spining in just few steps.</p>
             </div>
           </div>
-          <div className='owd'>
+          <div className='owd' onClick={()=>setActiveComponent(<Optimization/>)}>
             <div className='owi'><HiOutlineAdjustmentsHorizontal/></div>
               <div className='od'>
                 <p className='cp1'>Optimization Wizards</p>
                 <p className='cp2'>Go here after your motor spin consistently.</p>
               </div>
           </div>
-          <div className='atd'>
+          <div className='atd' onClick={()=>setActiveComponent(<AdvancedTuning/>)}>
             <div className='ati'><TbSettingsCog/></div>
               <div className='ad'>
                 <p className='cp1'>Advanced Tuning</p>
                 <p className='cp2'>Access all your control in one single page.</p>
               </div>
             </div>
-          <div className='rmd'>
+          <div className='rmd' onClick={()=>setActiveComponent(<Registermap/>)}>
             <div className='rmi'><GoProjectRoadmap /></div>
               <div className='rd'>
                 <p className='cp1'>Register Map</p>

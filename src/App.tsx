@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState,ReactElement } from "react";
 import Head from "./components/navbar/Head";
 import Sidebar from "./components/sidebar/Sidebar";
 import Home from "./components/homepage/Home";
 import "./App.css";
 import { DeviceProvider } from "./DeviceContext";
 function App() {
-  const [activeComponent, setActiveComponent] = useState<JSX.Element>(<Home/>);
+  const [activeComponent, setActiveComponent] = useState<ReactElement>(<Home />);
   return (
       <DeviceProvider>
         <div className="container">

@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import "./ClosedLoopTuning.css"
 import { IoChevronDown } from 'react-icons/io5';
-import { LineChart,XAxis,Tooltip,CartesianGrid,Line,ResponsiveContainer,YAxis,Legend} from 'recharts';
+import { LineChart,XAxis,Tooltip,CartesianGrid,Line,ResponsiveContainer,YAxis} from 'recharts';
 const ClosedLoopTuning = () => {
   const[activeTab,setActiveTab]=useState('Current Loop');
   const [value,setValue]=useState<number | null>(0);
@@ -13,10 +13,7 @@ const ClosedLoopTuning = () => {
   }
 
   const data = [
-    { name: 'Jan', sales: 4000 },
-    { name: 'Feb', sales: 3000 },
-    { name: 'Mar', sales: 5000 },
-    { name: 'Apr', sales: 7000 },
+    {time:0,current:0},
   ];
 
   const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
@@ -110,19 +107,19 @@ const ClosedLoopTuning = () => {
         }
       </div>
       <div className='CLT-DOWN-CONTAINER' style={{display:'flex'}}>
+        {activeTab==="Current Loop" && 
         <div className='clt-left-content'>
-          <ResponsiveContainer width="100%" height={300}>
+          <ResponsiveContainer width="80%" height={300}>
             <LineChart data={data} >
-            <XAxis dataKey="name" />
-            <YAxis />
+            <XAxis label={{value:'Time(Sec)' , position:'bottom'}} />
+            <YAxis label={{value:'Current(Amps)',angle:-90 ,position:'insideLeft'}}/>
             <Tooltip />
-            <Legend />
             <CartesianGrid stroke="#f5f5f5" />
-            <Line type="monotone" dataKey="sales" stroke="#8884d8" strokeWidth={2} />
-            {/* <Line type="monotone" dataKey="pv" stroke="#387908" yAxisId={1} /> */}
+            <Line type="monotone" dataKey="current" stroke="#8884d8" strokeWidth={2} dot={{fill:"#8884d8",r:4}} />
             </LineChart>
         </ResponsiveContainer>
         </div>
+        }
       </div>
     </div>
   )

@@ -1,19 +1,28 @@
-import React from 'react'
+import { Dispatch, ReactElement, SetStateAction } from 'react'
 import { IoHomeOutline } from "react-icons/io5";
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
 import { TbSettingsCog } from "react-icons/tb";
 import { GoProjectRoadmap } from "react-icons/go";
 import { RiErrorWarningLine } from "react-icons/ri";
 import enhanced_image from '../../compimg/enhanced_image.png';
+import Home from '../../components/homepage/Home';
+import Optimization from '../OPTIMIZATION/Optimization';
+import AdvancedTuning from '../AdvancedTuning';
+import Registermap from '../Registermap';
 import './Quickspin.css'
-const Quickspin = () => {
+
+type QuickspinPropType={
+  setActiveComponent:Dispatch<SetStateAction<ReactElement>>
+}
+
+const Quickspin = ({setActiveComponent}:QuickspinPropType) => {
   return (
     <div className='QS'>
       <div className='QSheader'>
-        <button className='qsb1'><IoHomeOutline className='qsic' /> Home Page</button>
-        <button className='qsb2'><HiOutlineAdjustmentsHorizontal className='qsic'/>Optimization Wizards</button>
-        <button className='qsb3'><TbSettingsCog className='qsic'/>Advanced Tuning</button>
-        <button className='qsb4'><GoProjectRoadmap className='qsic'/>Register Map</button>
+        <button className='qsb1' onClick={()=>{setActiveComponent(<Home setActiveComponent={setActiveComponent} />)}}><IoHomeOutline className='qsic' /> Home Page</button>
+        <button className='qsb2' onClick={()=>{setActiveComponent(<Optimization/>)}}><HiOutlineAdjustmentsHorizontal className='qsic'/>Optimization Wizards</button>
+        <button className='qsb3' onClick={()=>{setActiveComponent(<AdvancedTuning />)}}><TbSettingsCog className='qsic'/>Advanced Tuning</button>
+        <button className='qsb4' onClick={()=>{setActiveComponent(<Registermap />)}}><GoProjectRoadmap className='qsic'/>Register Map</button>
       </div>
       <p className='qsp'>Quick Spin </p>
       <div className='loadDefault'>
