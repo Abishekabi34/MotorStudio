@@ -39,7 +39,7 @@ const Optimization = () => {
           <button className='opt-btn3'>Open Loop and Handoff</button>
         </div>
         <div className='closedloop-div'>
-          <img src={optimg4}  style={{height:"70px",width:"170px",border:"1px solid red"}}/>
+          <img src={optimg4}  style={{height:"70px",width:"170px"}}/>
           <button className='opt-btn4'>Closed Loop</button>
         </div>
         <div className='motorstop-div'>
