@@ -36,7 +36,7 @@ import './Home.css';
 import { useDevice } from '../../DeviceContext';
 
 type HomePropType={
-  setActiveComponent?:Dispatch<SetStateAction<ReactElement>>
+  setActiveComponent:Dispatch<SetStateAction<ReactElement>>;
 }
 
 const Home = ({setActiveComponent}:HomePropType) => {
