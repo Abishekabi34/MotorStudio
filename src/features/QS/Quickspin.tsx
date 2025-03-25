@@ -7,12 +7,12 @@ import { RiErrorWarningLine } from "react-icons/ri";
 import enhanced_image from '../../compimg/enhanced_image.png';
 import Home from '../../components/homepage/Home';
 import Optimization from '../OPTIMIZATION/Optimization';
-import AdvancedTuning from '../AdvancedTuning';
+import AdvancedTuning from '../ADVANCEDTUNING/AdvancedTuning';
 import Registermap from '../Registermap';
 import './Quickspin.css'
 
 type QuickspinPropType={
-  setActiveComponent:Dispatch<SetStateAction<ReactElement>>
+  setActiveComponent:Dispatch<SetStateAction<ReactElement | null>>
 }
 
 const Quickspin = ({setActiveComponent}:QuickspinPropType) => {
@@ -32,11 +32,11 @@ const Quickspin = ({setActiveComponent}:QuickspinPropType) => {
           <p className='ld2'>Click the "Load Preset values" button to load the recommended default values.</p>
         </div>
         <div className='inpdiv'>
-          <input type="text" placeholder='Select' className='qsinp'/>
+          <input type='' placeholder='Select' className='qsinp'/>
           <button className='loadbutton'>Load Preset Values</button>
           </div>
       </div>
-      <div className='part2'>
+      <div className='part2' contentEditable="false" style={{opacity:'0.3'}}>
         <div className='motorinfo'>
           <div className='mi2'>
             <div className='sno2'>2</div>
@@ -61,9 +61,9 @@ const Quickspin = ({setActiveComponent}:QuickspinPropType) => {
             </div>
           </div>
           <div className='speed-inputs'>
-            <input type="text" className='inp1' placeholder='0.125A'/>
-            <input type="text" className='inp2' placeholder='0.00'/>
-            <input type="text" className='inp3'placeholder='1'/>
+            <input type="text" className='inp1' placeholder='0.125A' readOnly/>
+            <input type="text" className='inp2' placeholder='0.00' readOnly/>
+            <input type="text" className='inp3'placeholder='1' readOnly/>
           </div>
           <div className='run'><button className='run-button'>Run MPET</button></div>
           <div className='war'><RiErrorWarningLine className='war1'/><p className='war2'>Executing the MPET command will enable Motor spinning</p></div>
@@ -72,16 +72,16 @@ const Quickspin = ({setActiveComponent}:QuickspinPropType) => {
         <div className='rightpart'>
           <div className='mpet-title'>MPET Results</div>
           <div className='inp-container'>
-            <div className='rinpc'><input type="text" className='rinp1' placeholder='0.00'/><p className='m1'>Ohm</p></div>
-            <div className='rinpc'><input type="text" className='rinp2' placeholder='0.00'/><p className='m2'>mH</p></div>
-            <div className='rinpc'><input type="text" className='rinp3' placeholder='0.00'/><p className='m3'>mV/Hz</p></div>
-            <div className='rinpc'><input type="text" className='rinp4' placeholder='0.00'/></div>
-            <div className='rinpc'><input type="text" className='rinp5' placeholder='0.00'/></div>
+            <div className='rinpc'><input type="number" readOnly className='rinp1' placeholder='0.00'/><p className='m1'>Ohm</p></div>
+            <div className='rinpc'><input type="number" readOnly className='rinp2' placeholder='0.00'/><p className='m2'>mH</p></div>
+            <div className='rinpc'><input type="number" readOnly className='rinp3' placeholder='0.00'/><p className='m3'>mV/Hz</p></div>
+            <div className='rinpc'><input type="number" readOnly className='rinp4' placeholder='0.00'/></div>
+            <div className='rinpc'><input type="number" readOnly className='rinp5' placeholder='0.00'/></div>
           </div>
         </div>
       </div>
       <div className='part3'>
-        <div className='spinmotor'>
+        <div className='spinmotor' style={{opacity:'0.3'}}>
           <div className='sno2'>3</div>
           <div className='para-content'>
             <p className='ld1'>Spin Motor</p>

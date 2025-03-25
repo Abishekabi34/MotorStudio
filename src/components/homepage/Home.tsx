@@ -16,7 +16,7 @@ import { TbSettingsCog } from "react-icons/tb";
 import { GoProjectRoadmap } from "react-icons/go";
 import Quickspin from '../../features/QS/Quickspin';
 import Optimization from '../../features/OPTIMIZATION/Optimization';
-import AdvancedTuning from '../../features/AdvancedTuning';
+import AdvancedTuning from '../../features/ADVANCEDTUNING/AdvancedTuning';
 import Registermap from '../../features/Registermap';
 import img1 from '../../componentimg1/img1.jpg';
 import img2 from '../../componentimg1/img2.jpg';
@@ -36,7 +36,7 @@ import './Home.css';
 import { useDevice } from '../../DeviceContext';
 
 type HomePropType={
-  setActiveComponent:Dispatch<SetStateAction<ReactElement>>;
+  setActiveComponent:Dispatch<SetStateAction<ReactElement | null>>;
 }
 
 const Home = ({setActiveComponent}:HomePropType) => {

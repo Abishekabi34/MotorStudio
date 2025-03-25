@@ -10,6 +10,36 @@
   margin-top: 10px;
 }
 
+.Toastify__toast-container {
+  width: auto;
+  min-width: 250px;
+}
+
+.Toastify__toast--error {
+  background: #cc0000;
+  border-radius: 0;
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+}
+
+.toast-icon {
+  font-size: 18px;
+}
+
+.Toastify__close-button {
+  color: white;
+  opacity: 1;
+}
+
+.Toastify__close-button:hover {
+  opacity: 0.8;
+}
+
 .CLT-CONTENT p{
   font-size: small;
 }

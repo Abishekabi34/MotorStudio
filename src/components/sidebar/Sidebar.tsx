@@ -11,14 +11,14 @@ import { IoLinkSharp } from "react-icons/io5";
 import Optimization from "../../features/OPTIMIZATION/Optimization";
 import MPET from "../../features/MPET/MPET";
 import ClosedLoopTuning from "../../features/CLOSEDLOOP/ClosedLoopTuning";
-import AdvancedTuning from "../../features/AdvancedTuning";
+import AdvancedTuning from "../../features/ADVANCEDTUNING/AdvancedTuning";
 import Registermap from "../../features/Registermap";
 import "./Sidebar.css";
 import Quickspin from "../../features/QS/Quickspin";
 import Home from "../homepage/Home";
 
 interface SidebarProps {
-  setActiveComponent: Dispatch<SetStateAction<ReactElement>>
+  setActiveComponent: Dispatch<SetStateAction<ReactElement | null>>
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ setActiveComponent }) => {
