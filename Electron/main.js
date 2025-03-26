@@ -1,8 +1,8 @@
 import {app,BrowserWindow} from 'electron'
 function createWindow() {
   const win = new BrowserWindow({
-      minWidth: 800,
-      minHeight: 600,
+      minWidth: 1000,
+      minHeight: 900,
       autoHideMenuBar:true,
       webPreferences: {
           nodeIntegration: true,

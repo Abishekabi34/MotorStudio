@@ -12,16 +12,24 @@ import Optimization from "../../features/OPTIMIZATION/Optimization";
 import MPET from "../../features/MPET/MPET";
 import ClosedLoopTuning from "../../features/CLOSEDLOOP/ClosedLoopTuning";
 import AdvancedTuning from "../../features/ADVANCEDTUNING/AdvancedTuning";
-import Registermap from "../../features/Registermap";
+import Registermap from "../../features/REGISTERMAP/Registermap";
 import "./Sidebar.css";
 import Quickspin from "../../features/QS/Quickspin";
 import Home from "../homepage/Home";
 
-interface SidebarProps {
-  setActiveComponent: Dispatch<SetStateAction<ReactElement | null>>
+// interface SidebarProps {
+//   setActiveComponent: Dispatch<SetStateAction<ReactElement | null>>
+// }
+
+type SidePropType={
+  setActiveComponent:Dispatch<SetStateAction<ReactElement | null>>
+  setYesDevice:Dispatch<SetStateAction<boolean>>
+  yesDevice:boolean
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ setActiveComponent }) => {
+
+
+const Sidebar = ({ setActiveComponent,setYesDevice,yesDevice}: SidePropType) => {
   const [isExpanded, setIsExpanded] = useState(true);
 
   return (
@@ -29,12 +37,12 @@ const Sidebar: React.FC<SidebarProps> = ({ setActiveComponent }) => {
     (<div className="sidebar">
       <div className="sidebar-top">
         <div className="sidebar-link">
-          <button onClick={() => setActiveComponent(<Home setActiveComponent={setActiveComponent} />)}>
+          <button onClick={() => setActiveComponent(<Home setActiveComponent={setActiveComponent} setYesDevice={setYesDevice} yesDevice={yesDevice}/>)}>
             <IoHomeOutline size="1.5em" />
           </button>
         </div>
         <div className="sidebar-link">
-          <button onClick={() => setActiveComponent(<Quickspin setActiveComponent={setActiveComponent}/>)}>
+          <button onClick={() => setActiveComponent(<Quickspin setActiveComponent={setActiveComponent} setYesDevice={setYesDevice} yesDevice={yesDevice}/>)}>
             <PiSpinnerBallFill size="1.5em" />
           </button>
         </div>
@@ -82,11 +90,11 @@ const Sidebar: React.FC<SidebarProps> = ({ setActiveComponent }) => {
     :
     (<div className="sidebar-expand">
       <div className="se-top" style={{display:"flex",flexDirection:"column"}}>
-        <div style={{display:"flex"}} className="se-div1" onClick={()=>setActiveComponent(<Home setActiveComponent={setActiveComponent}/>)}>
+        <div style={{display:"flex"}} className="se-div1" onClick={()=>setActiveComponent(<Home setActiveComponent={setActiveComponent} setYesDevice={setYesDevice} yesDevice={yesDevice}/>)}>
           <div className="se-ic"><IoHomeOutline size="1.5em"/></div>
           <div className="se-ip">Home</div>
         </div>
-        <div style={{display:"flex"}} className="se-div2" onClick={()=>setActiveComponent(<Quickspin setActiveComponent={setActiveComponent}/>)}>
+        <div style={{display:"flex"}} className="se-div2" onClick={()=>setActiveComponent(<Quickspin setActiveComponent={setActiveComponent} setYesDevice={setYesDevice} yesDevice={yesDevice}/>)}>
           <div className="se-ic"><PiSpinnerBallFill size="1.5em"/></div>
           <div className="se-ip">Quick Spin</div>
         </div>

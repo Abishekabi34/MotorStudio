@@ -1,4 +1,4 @@
-import { Dispatch, ReactElement, SetStateAction } from 'react'
+import { Dispatch, ReactElement, SetStateAction, useState } from 'react'
 import { IoHomeOutline } from "react-icons/io5";
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
 import { TbSettingsCog } from "react-icons/tb";
@@ -8,18 +8,28 @@ import enhanced_image from '../../compimg/enhanced_image.png';
 import Home from '../../components/homepage/Home';
 import Optimization from '../OPTIMIZATION/Optimization';
 import AdvancedTuning from '../ADVANCEDTUNING/AdvancedTuning';
-import Registermap from '../Registermap';
+import Registermap from '../REGISTERMAP/Registermap';
 import './Quickspin.css'
 
 type QuickspinPropType={
   setActiveComponent:Dispatch<SetStateAction<ReactElement | null>>
+  setYesDevice:Dispatch<SetStateAction<boolean>>
+  yesDevice:boolean
 }
 
-const Quickspin = ({setActiveComponent}:QuickspinPropType) => {
+const Quickspin = ({setActiveComponent,setYesDevice,yesDevice}:QuickspinPropType) => {
+
+  const [value,setValue]=useState(0);
+
+  const handleInp=(e:React.ChangeEvent<HTMLInputElement>)=>{
+    setValue(Number(e.target.value));
+  }
+
+
   return (
     <div className='QS'>
       <div className='QSheader'>
-        <button className='qsb1' onClick={()=>{setActiveComponent(<Home setActiveComponent={setActiveComponent} />)}}><IoHomeOutline className='qsic' /> Home Page</button>
+        <button className='qsb1' onClick={()=>{setActiveComponent(<Home setActiveComponent={setActiveComponent} setYesDevice={setYesDevice} yesDevice={yesDevice}/>)}}><IoHomeOutline className='qsic' /> Home Page</button>
         <button className='qsb2' onClick={()=>{setActiveComponent(<Optimization/>)}}><HiOutlineAdjustmentsHorizontal className='qsic'/>Optimization Wizards</button>
         <button className='qsb3' onClick={()=>{setActiveComponent(<AdvancedTuning />)}}><TbSettingsCog className='qsic'/>Advanced Tuning</button>
         <button className='qsb4' onClick={()=>{setActiveComponent(<Registermap />)}}><GoProjectRoadmap className='qsic'/>Register Map</button>
@@ -87,8 +97,11 @@ const Quickspin = ({setActiveComponent}:QuickspinPropType) => {
             <p className='ld1'>Spin Motor</p>
             <p className='ld2'>Move the slider to control the speed of the motor</p>
             <div><img src={enhanced_image} alt="speedofmotor" className='enhanced-img'  /></div>
-            <div><p className='i2c'>I2C Speed Command Percentage(%)</p></div>
-            <div className='slidecontainer'><input type="range" min="1" max="100" value="50" className='slider'/><input type="text" placeholder='0.00' /></div>
+            <div style={{marginTop:"15px"}}><p className='i2c'>I2C Speed Command Percentage(%)</p></div>
+            <div className='slidecontainer'>
+              <input type="range"  min="0" max="100" value={value} onChange={handleInp} className='slider'/>
+              <input type="number" placeholder='0' value={value} onChange={handleInp} className='slide-input'/>
+            </div>
           </div>
         </div>
         <div className='log-page'>

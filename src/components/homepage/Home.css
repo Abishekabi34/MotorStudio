@@ -222,8 +222,8 @@
 }
 
 ::-webkit-scrollbar{
-  width: 0.25rem;
-}
+  width: 0.5rem;
+} 
 
 .for-button {
   position: relative;

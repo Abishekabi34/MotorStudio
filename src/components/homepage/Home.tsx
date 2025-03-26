@@ -17,7 +17,7 @@ import { GoProjectRoadmap } from "react-icons/go";
 import Quickspin from '../../features/QS/Quickspin';
 import Optimization from '../../features/OPTIMIZATION/Optimization';
 import AdvancedTuning from '../../features/ADVANCEDTUNING/AdvancedTuning';
-import Registermap from '../../features/Registermap';
+import Registermap from '../../features/REGISTERMAP/Registermap';
 import img1 from '../../componentimg1/img1.jpg';
 import img2 from '../../componentimg1/img2.jpg';
 import img3 from '../../componentimg1/img3.jpg';
@@ -37,9 +37,11 @@ import { useDevice } from '../../DeviceContext';
 
 type HomePropType={
   setActiveComponent:Dispatch<SetStateAction<ReactElement | null>>;
+  setYesDevice:Dispatch<SetStateAction<boolean>>;
+  yesDevice:boolean;
 }
 
-const Home = ({setActiveComponent}:HomePropType) => {
+const Home = ({setActiveComponent,setYesDevice,yesDevice}:HomePropType) => {
 
 
   const {isValidDevice,setIsValidDevice}=useDevice();
@@ -115,6 +117,8 @@ const Home = ({setActiveComponent}:HomePropType) => {
     setIsValidDevice(isDevice);
   }, [search,setIsValidDevice]);
 
+
+
   const showErrorToast = () => {
     toast.error(
       <div className="toast-content">
@@ -136,6 +140,7 @@ const Home = ({setActiveComponent}:HomePropType) => {
       showErrorToast();
     }
   };
+
 
   const filteredDevices = devices.filter(device =>
     device.name.toLowerCase().includes(search.toLowerCase())
@@ -260,7 +265,7 @@ const Home = ({setActiveComponent}:HomePropType) => {
         </div>
         :
         <div className='proceed-buttons'>
-          <div className='qsd' onClick={()=>setActiveComponent(<Quickspin setActiveComponent={setActiveComponent}/>)}>
+          <div className='qsd' onClick={()=>setActiveComponent(<Quickspin setActiveComponent={setActiveComponent} setYesDevice={setYesDevice} yesDevice={yesDevice}/>)}>
             <div className='qsi'><PiSpinnerBallFill/></div>
             <div className='pd'>
               <p className='cp1'>Quick Spin</p>
@@ -320,10 +325,7 @@ const Home = ({setActiveComponent}:HomePropType) => {
         </div>
         {isProceedState &&
           <div className='setup-div'>
-            {/* <label className='setup-label'> */}
             <input type="checkbox" className='setup-check'/>
-            {/* <span className='checked11'></span> */}
-            {/* </label> */}
             <p className='setup-para'>Hardware setup has been done manually</p> 
             <button className='setup-btn'>Setup Now</button>
           </div>

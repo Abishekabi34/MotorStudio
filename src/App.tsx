@@ -6,9 +6,10 @@ import "./App.css";
 import { DeviceProvider } from "./DeviceContext";
 function App() {
   const [activeComponent, setActiveComponent] = useState<ReactElement | null>(null);
+  const [yesDevice,setYesDevice]=useState(false);
 
   useEffect(() => {
-    setActiveComponent(<Home setActiveComponent={setActiveComponent} />);
+    setActiveComponent(<Home setActiveComponent={setActiveComponent} setYesDevice={setYesDevice} yesDevice={yesDevice}/>);
   }, []);
   return (
       <DeviceProvider>
@@ -18,7 +19,7 @@ function App() {
             <div className="content">
               <div>
                 <div className="side-bar">
-                  <Sidebar setActiveComponent={setActiveComponent}/>
+                  <Sidebar setActiveComponent={setActiveComponent} setYesDevice={setYesDevice} yesDevice={yesDevice}/>
                 </div>
               </div>
               <main className="home-web">
