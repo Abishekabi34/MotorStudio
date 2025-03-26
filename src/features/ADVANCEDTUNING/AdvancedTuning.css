@@ -3,6 +3,7 @@
     margin: 0;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .AT-TOP-CONTAINER{
@@ -44,3 +45,36 @@
     display: flex;
     flex-direction: column;
 }
+
+.right-atb{
+    margin-left: 150px;
+    margin-top: 10px;
+}
+
+.AT-DOWN-CONTAINER{
+    width: 90%;
+    height: 90%;
+    overflow-y: auto;
+    margin-top: 5px;
+    margin-left: 5px; 
+    background-color: white;
+    border-radius: 3px;
+}
+
+.div-container-at div{
+    width: 98%;
+    padding: 5px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-top: 15px;
+    margin-left: 10px;
+    border-radius: 8px;
+    border-bottom: 1px solid rgb(180, 171, 171);
+    border-right: 0.1px solid rgb(180, 171, 171);
+}
+
+.div-container-at div h6{
+    font-size: large;
+    font-weight: 400;
+}
+
